@@ -1,10 +1,72 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Ropa - Inicio</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    /* Estilo catálogo */
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .producto {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,7 +85,7 @@
       <h2>Bienvenido a nuestra tienda</h2>
       <p>Ofrecemos la mejor moda para damas, caballeros y niños, con calidad y buen precio.</p>
 
-      <!-- Video d............ -->
+      <!-- Video de YouTube -->
       <iframe width="560" height="315" 
         src="https://www.youtube.com/embed/Y-0rz4c68L4?autoplay=1&mute=1&loop=1&playlist=Y-0rz4c68L4" 
         title="Video de presentación" 
@@ -31,6 +93,36 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
       </iframe>
+    </section>
+
+    <!-- Catálogo de ropa -->
+    <section>
+      <h2>Catálogo de Ropa</h2>
+      <div class="catalogo">
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x250?text=Vestido" alt="Vestido">
+          <h3>Vestido elegante</h3>
+          <p>S/ 120.00</p>
+        </div>
+
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x250?text=Camisa" alt="Camisa">
+          <h3>Camisa Casual</h3>
+          <p>S/ 85.00</p>
+        </div>
+
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x250?text=Pantalón" alt="Pantalón">
+          <h3>Pantalón Jeans</h3>
+          <p>S/ 95.00</p>
+        </div>
+
+        <div class="producto">
+          <img src="https://via.placeholder.com/200x250?text=Chaqueta" alt="Chaqueta">
+          <h3>Chaqueta Deportiva</h3>
+          <p>S/ 150.00</p>
+        </div>
+      </div>
     </section>
   </main>
 
