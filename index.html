@@ -1,10 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Ropa - Niños Hombres</title>
-  <link rel="stylesheet" href="styles.css">
   <style>
     /* --- Estilos generales --- */
     body {
@@ -13,7 +12,9 @@
       padding: 0;
       text-align: center;
       background-color: #f9f9f9;
-      animation: fadeInBody 1s ease-in-out; /* animación de entraddd*/
+      animation: fadeInBody 1s ease-in-out;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     header {
@@ -23,13 +24,18 @@
       animation: slideDown 1s ease-out;
     }
 
+    header h1 {
+      margin: 0;
+    }
+
     nav ul {
       list-style: none;
       padding: 0;
+      margin-top: 10px;
     }
 
     nav ul li {
-      display: inline;
+      display: inline-block;
       margin: 0 10px;
     }
 
@@ -38,7 +44,9 @@
       text-decoration: none;
       font-weight: bold;
       position: relative;
-      transition: color 0.3s ease; /* transición color */
+      transition: color 0.3s ease;
+      padding: 10px 15px;
+      display: inline-block;
     }
 
     nav ul li a::after {
@@ -46,7 +54,7 @@
       position: absolute;
       width: 0;
       height: 2px;
-      bottom: -4px;
+      bottom: 4px;
       left: 0;
       background: #ffcc00;
       transition: width 0.3s ease;
@@ -63,6 +71,8 @@
     main {
       padding: 20px;
       animation: fadeInUp 1.2s ease-in;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     /* --- Catálogo de productos --- */
@@ -91,6 +101,8 @@
       width: 100%;
       border-radius: 8px;
       transition: transform 0.3s ease;
+      max-width: 100%;
+      height: auto;
     }
 
     .producto img:hover {
@@ -130,6 +142,54 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    /* === Diseño Responsivo === */
+
+    /* 📱 Dispositivos móviles (pantallas pequeñas) */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .catalogo {
+        grid-template-columns: 1fr; /* una sola columna */
+      }
+
+      iframe {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    /* 💻 Tablets o pantallas medianas */
+    @media (min-width: 601px) and (max-width: 992px) {
+      .catalogo {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      iframe {
+        width: 90%;
+        height: 250px;
+      }
+    }
+
+    /* 🖥️ Escritorio (pantallas grandes) */
+    @media (min-width: 993px) {
+      .catalogo {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      iframe {
+        width: 560px;
+        height: 315px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -147,32 +207,44 @@
   <main>
     <section>
       <h2>Bienvenido a nuestra tienda</h2>
-      <p>Aquí encontrarás la mejor ropa para niños: cómoda, moderna.</p>
+      <p>Aquí encontrarás la mejor ropa para niños: cómoda, moderna y al mejor precio.</p>
     </section>
 
     <section>
       <h2>Catálogo de Ropa Infantil (Niños Hombres)</h2>
       <div class="catalogo">
         <div class="producto">
-          <img src="img/polo.jpg" alt="Polo Niño">
+          <img src="img/polo.jpg" 
+               srcset="img/polo-400.jpg 400w, img/polo.jpg 800w"
+               sizes="(max-width: 600px) 400px, 800px"
+               alt="Polo Infantil">
           <h3>Polo Infantil</h3>
           <p>S/ 40.00</p>
         </div>
 
         <div class="producto">
-          <img src="img/short.jpg" alt="Short Niño">
+          <img src="img/short.jpg" 
+               srcset="img/short-400.jpg 400w, img/short.jpg 800w"
+               sizes="(max-width: 600px) 400px, 800px"
+               alt="Short Deportivo">
           <h3>Short Deportivo</h3>
           <p>S/ 50.00</p>
         </div>
 
         <div class="producto">
-          <img src="img/polodeportivo.jpg" alt="Zapatillas Niño">
+          <img src="img/polodeportivo.jpg" 
+               srcset="img/polodeportivo-400.jpg 400w, img/polodeportivo.jpg 800w"
+               sizes="(max-width: 600px) 400px, 800px"
+               alt="Zapatillas Casual">
           <h3>Zapatillas Casual</h3>
           <p>S/ 95.00</p>
         </div>
 
         <div class="producto">
-          <img src="img/casaca.jpg" alt="Casaca Niño">
+          <img src="img/casaca.jpg" 
+               srcset="img/casaca-400.jpg 400w, img/casaca.jpg 800w"
+               sizes="(max-width: 600px) 400px, 800px"
+               alt="Casaca Infantil">
           <h3>Casaca Infantil</h3>
           <p>S/ 110.00</p>
         </div>
@@ -181,9 +253,9 @@
 
     <section>
       <h2>Video de Presentación</h2>
-      <iframe width="560" height="315" 
+      <iframe 
         src="https://www.youtube.com/embed/Y-0rz4c68L4?autoplay=1&mute=1&loop=1&playlist=Y-0rz4c68L4" 
-        title="Video de presentación" 
+        title="Video de presentación"
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
